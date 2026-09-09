@@ -1,0 +1,145 @@
+$engine: 3
+$onesync: on
+name: RIG
+version: 0.1.0
+author: Case
+description: A high-performance survival framework built for FiveM.
+
+tasks:
+  #  Download Base Files
+  - action: download_github
+    src: https://github.com/rig-fivem/txAdminRecipe
+    ref: main
+    dest: ./tmp/rigframework
+
+  - action: move_path
+    src: ./tmp/rigframework/server.cfg
+    dest: ./server.cfg
+
+  - action: move_path
+    src: ./tmp/rigframework/server_logo.png
+    dest: ./server_logo.png
+
+  # Prepare Database
+  - action: connect_database
+  - action: query_database
+    file: ./tmp/rigframework/rig.sql
+
+  - action: waste_time
+    seconds: 3
+
+  # STANDALONE
+  - action: download_github
+    dest: ./resources/[standalone]/bob74_ipl
+    ref: master
+    src: https://github.com/Bob74/bob74_ipl
+
+  - action: download_github
+    dest: ./resources/[standalone]/pma-voice
+    ref: main
+    src: https://github.com/AvarianKnight/pma-voice
+
+  # OX
+  - action: download_file
+    path: ./tmp/oxmysql.zip
+    url: https://github.com/communityox/oxmysql/releases/latest/download/oxmysql.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/oxmysql.zip
+
+  - action: waste_time
+    seconds: 3
+
+  # RIG
+  - action: download_file
+    path: ./tmp/rig.zip
+    url: https://github.com/rig-fivem/rig/releases/latest/download/rig.zip
+  - action: unzip
+    dest: ./resources/[rig]
+    src: ./tmp/rig.zip
+
+  - action: download_file
+    path: ./tmp/rig_avatars.zip
+    url: https://github.com/rig-fivem/rig_avatars/releases/latest/download/rig_avatars.zip
+  - action: unzip
+    dest: ./resources/[rig]
+    src: ./tmp/rig_avatars.zip
+
+  - action: download_file
+    path: ./tmp/rig_crafting.zip
+    url: https://github.com/rig-fivem/rig_crafting/releases/latest/download/rig_crafting.zip
+  - action: unzip
+    dest: ./resources/[rig]
+    src: ./tmp/rig_crafting.zip
+
+  - action: waste_time
+    seconds: 3
+
+  - action: download_file
+    path: ./tmp/rig_gathering.zip
+    url: https://github.com/rig-fivem/rig_gathering/releases/latest/download/rig_gathering.zip
+  - action: unzip
+    dest: ./resources/[rig]
+    src: ./tmp/rig_gathering.zip
+
+  - action: download_file
+    path: ./tmp/rig_hud.zip
+    url: https://github.com/rig-fivem/rig_hud/releases/latest/download/rig_hud.zip
+  - action: unzip
+    dest: ./resources/[rig]
+    src: ./tmp/rig_hud.zip
+
+  - action: download_file
+    path: ./tmp/rig_interactions.zip
+    url: https://github.com/rig-fivem/rig_interactions/releases/latest/download/rig_interactions.zip
+  - action: unzip
+    dest: ./resources/[rig]
+    src: ./tmp/rig_interactions.zip
+  
+  - action: waste_time
+    seconds: 3
+
+  - action: download_file
+    path: ./tmp/rig_inventory.zip
+    url: https://github.com/rig-fivem/rig_inventory/releases/latest/download/rig_inventory.zip
+  - action: unzip
+    dest: ./resources/[rig]
+    src: ./tmp/rig_inventory.zip
+
+  - action: download_file
+    path: ./tmp/rig_loadscreen.zip
+    url: https://github.com/rig-fivem/rig_loadscreen/releases/latest/download/rig_loadscreen.zip
+  - action: unzip
+    dest: ./resources/[rig]
+    src: ./tmp/rig_loadscreen.zip
+
+  - action: download_file
+    path: ./tmp/rig_skills.zip
+    url: https://github.com/rig-fivem/rig_skills/releases/latest/download/rig_skills.zip
+  - action: unzip
+    dest: ./resources/[rig]
+    src: ./tmp/rig_skills.zip
+
+  - action: waste_time
+    seconds: 3
+    
+  - action: download_file
+    path: ./tmp/rig_spawns.zip
+    url: https://github.com/rig-fivem/rig_spawns/releases/latest/download/rig_spawns.zip
+  - action: unzip
+    dest: ./resources/[rig]
+    src: ./tmp/rig_spawns.zip
+        
+  - action: download_file
+    path: ./tmp/rig_statuses.zip
+    url: https://github.com/rig-fivem/rig_statuses/releases/latest/download/rig_statuses.zip
+  - action: unzip
+    dest: ./resources/[rig]
+    src: ./tmp/rig_statuses.zip
+
+  - action: download_file
+    path: ./tmp/rig_weather.zip
+    url: https://github.com/rig-fivem/rig_weather/releases/latest/download/rig_weather.zip
+  - action: unzip
+    dest: ./resources/[rig]
+    src: ./tmp/rig_weather.zip
