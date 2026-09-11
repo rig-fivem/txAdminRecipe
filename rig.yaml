@@ -148,3 +148,7 @@ tasks:
   - action: unzip
     dest: ./resources/[rig]
     src: ./tmp/rig_weather.zip
+
+  # Cleanup
+  - action: remove_path
+    path: ./tmp
