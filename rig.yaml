@@ -60,7 +60,7 @@ tasks:
 
   - action: download_file
     path: ./tmp/rig_admin.zip
-    url: https://github.com/rig-fivem/rig_avatars/releases/latest/download/rig_admin.zip
+    url: https://github.com/rig-fivem/rig_admin/releases/latest/download/rig_admin.zip
   - action: unzip
     dest: ./resources/[rig]
     src: ./tmp/rig_admin.zip
