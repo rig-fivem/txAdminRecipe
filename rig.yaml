@@ -59,18 +59,18 @@ tasks:
     src: ./tmp/rig.zip
 
   - action: download_file
+    path: ./tmp/rig_admin.zip
+    url: https://github.com/rig-fivem/rig_avatars/releases/latest/download/rig_admin.zip
+  - action: unzip
+    dest: ./resources/[rig]
+    src: ./tmp/rig_admin.zip
+
+  - action: download_file
     path: ./tmp/rig_avatars.zip
     url: https://github.com/rig-fivem/rig_avatars/releases/latest/download/rig_avatars.zip
   - action: unzip
     dest: ./resources/[rig]
     src: ./tmp/rig_avatars.zip
-
-  - action: download_file
-    path: ./tmp/rig_crafting.zip
-    url: https://github.com/rig-fivem/rig_crafting/releases/latest/download/rig_crafting.zip
-  - action: unzip
-    dest: ./resources/[rig]
-    src: ./tmp/rig_crafting.zip
 
   - action: waste_time
     seconds: 3
