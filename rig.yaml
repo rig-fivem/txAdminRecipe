@@ -20,6 +20,10 @@ tasks:
     src: ./tmp/rigframework/server_logo.png
     dest: ./server_logo.png
 
+  - action: move_path
+    src: ./tmp/rigframework/configs
+    dest: ./configs
+
   # Prepare Database
   - action: connect_database
   - action: query_database
